@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>
+                Euro milhões
+            </title>
+        </head>
+        <body>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div style="text-align:center;background-color:rgb(40, 139, 143);border-color:turquoise;border-style: dashed; border-width: 6px; width:60%;margin:auto;">
+                <br>
+                <img src=euromilhoes.png>
+                <form name=form1>+
+                    <br>
+                    <br>
+                    <br>
+                    <div style ="background-color:rgb(219, 221, 221);margin-left: 34px;border-style:solid  ;border-color:lime; border-width: 4px;width:90%; text-align:center">
+                        <h1 style="text-align:left;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Números:</h1>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="         1        "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="         2        "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="         3        "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="         4        "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="         5        "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;"type=text name=n1 disabled=true size=9>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;" type=text name=n2 disabled=true size=9>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;"type=text name=n3 disabled=true size=9>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;" type=text name=n4 disabled=true size=9>
+                        &nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;" type=text name=n5 disabled=true size=9>&nbsp;&nbsp;&nbsp;
+                        <br>
+                        <br>
+                    </div>
+                    <br>
+                    <br>
+                    <div style ="background-color:rgb(219, 221, 221);margin-left: 160px;border-style:solid  ;border-color:lime; border-width: 4px;width:60%; text-align:left">      
+                        
+                        <h1>&nbsp;&nbsp;&nbsp;Estrelas:</h1>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="        1         "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type=button value="        2         "    disabled=true style="background-color: green;font-size: 16px;color:white; height:50px;" >
+                        <br>
+                        <br>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;" type=text name=e1 disabled=true size=9.6>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="text-align: center;"type text name=e2 disabled=true size=9.5>
+                    <br>
+                    <br>
+                    </div>
+                    <br>
+                    <br>
+                    <input style="font-size: 23px;" type=button name=sortear value=Sortear onclick="milhoes();">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input style="font-size: 23px" type=reset name=limpar value=Limpar>
+                    <br>
+                    <br>
+                    <br>
+                </form>
+            </div>
+            <script>
+                function milhoes()
+                {
+                    var num=new Array(5);
+                    var e= new Array(2);
+                    num[0]=Math.floor((Math.random()*49)+1);
+                    num[1]=Math.floor((Math.random()*49)+1);
+                    num[2]=Math.floor((Math.random()*49)+1);
+                    num[3]=Math.floor((Math.random()*49)+1);
+                    num[4]=Math.floor((Math.random()*49)+1);
+                    e[0]=Math.floor((Math.random()*11)+1);
+                    e[1]=Math.floor((Math.random()*11)+1);
+                    while(num[0]==num[1]||num[0]==num[2]||num[0]==num[3]||num[0]==num[4])
+                    {
+                        num[0]=Math.floor((Math.random()*49)+1)
+                        
+                    }
+                    while(num[1]==num[0]||num[1]==num[2]||num[1]==num[3]||num[1]==num[4])
+                    {
+                        num[1]=Math.floor((Math.random()*49)+1)
+                    }
+                    while(num[2]==num[0]||num[2]==num[1]||num[2]==num[3]||num[2]==num[4])
+                    {
+                        num[2]=Math.floor((Math.random()*49)+1)
+                    }
+                    while(num[3]==num[0]||num[3]==num[1]||num[3]==num[2]||num[3]==num[4])
+                    {
+                        num[3]=Math.floor((Math.random()*49)+1)
+                    }
+                    while(num[4]==num[0]||num[4]==num[1]||num[4]==num[2]||num[4]==num[3])
+                    {
+                        num[4]=Math.floor((Math.random()*49)+1)
+                    }
+                    while(e[0]==e[1])
+                    {
+                        e[0]=Math.floor((Math.random()*11)+1)
+                    }
+                    num.sort(function(a,b){return a-b});
+                    e.sort(function(a,b){return a-b});
+                    document.form1.n1.value=num[0];
+                    document.form1.n2.value=num[1];
+                    document.form1.n3.value=num[2];
+                    document.form1.n4.value=num[3];
+                    document.form1.n5.value=num[4];
+                    document.form1.e1.value=e[0];
+                    document.form1.e2.value=e[1];
+
+
+                }
+            </script>
+        </body>
+    </html>
